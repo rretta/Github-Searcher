@@ -3,7 +3,7 @@ export const Footer = () => {
   return (
     <footer className="footer bg-gray-800  p-4 items-center justify-center  p-4  rounded-sm text-neutral-content">
       <aside className="items-center grid-flow-col">
-        <a href="https://github.com/rretta" target="_blank">
+        <a href="https://rretta.dev/" target="_blank">
           <img
             src={rretta}
             alt="rretta"
