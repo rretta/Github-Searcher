@@ -23,6 +23,7 @@ export const Search = () => {
     if (searchFromRepo) {
       setSearchResults(resultadosBusqueda);
     }
+    // console.log("come from navbar:", comeFromNavbar);
   });
 
   const handleSearch = async () => {
@@ -90,9 +91,11 @@ export const Search = () => {
         {isLoading ? <p className="text-2xl text-center">Loading...</p> : null}
 
         <div className="mt-6 w-full justify-center content-center text-center  text-white">
-          {searched ? (
+          {searched && (
             <p className="text-2xl">{searchResults.length} resultados</p>
-          ) : (
+          )}
+
+          {!searched && searchResults.length === 0 ? (
             <div className=" flex flex-col content-center  items-center  align-middle justify-center">
               <div className="lg:ml-40 -rotate-45 lg:rotate-0 ">
                 <Arrow />
@@ -101,7 +104,7 @@ export const Search = () => {
                 <p>ingresa un nombre vinculado a GitHub para buscar </p>
               </div>
             </div>
-          )}
+          ) : null}
         </div>
 
         <ul className="flex  flex-wrap justify-center  mt-4">

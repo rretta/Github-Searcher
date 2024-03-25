@@ -14,6 +14,9 @@ export const Navbar = () => {
   const cambiarSearchFromRepo = useSearchResultsStore(
     (state) => state.cambiarSearchFromRepo
   );
+  const setComeFromSearch = useSearchResultsStore(
+    (state) => state.setComeFromSearch
+  );
 
   const handleInputChange = (event) => {
     setSearchTerm(event.target.value);
@@ -31,6 +34,10 @@ export const Navbar = () => {
     }
   };
 
+  const handleLogoClick = () => {
+    setComeFromSearch();
+  };
+
   const handleKeyPress = (event) => {
     if (event.key === "Enter") {
       handleSearch();
@@ -40,7 +47,7 @@ export const Navbar = () => {
   return (
     <header className="flex flex-col lg:flex-row justify-between gap-4 mb-14  ">
       <div className="flex flex-row gap-4">
-        <Link to="/">
+        <Link to="/" onClick={handleLogoClick}>
           <GithubSvg />
         </Link>
 
