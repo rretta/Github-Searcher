@@ -27,7 +27,7 @@ export const Header = ({ user }) => {
             <LocationSvg /> <p>{user.location}</p>
           </div>
           <div className="flex flex-row gap-1">
-            <a href={user.blog} target="_blank">
+            <a href={`https://${user.blog}`} target="_blank">
               <Link />
             </a>
             <p>{user.blog}</p>
